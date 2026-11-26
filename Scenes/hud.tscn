@@ -14,6 +14,9 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bjfho"]
+bg_color = Color(1, 1, 1, 1)
+
 [node name="HUD" type="CanvasLayer" unique_id=1250296682]
 script = ExtResource("1_bjfho")
 
@@ -41,3 +44,19 @@ theme_override_colors/font_color = Color(1, 0.9137255, 0.5019608, 1)
 theme_override_fonts/font = ExtResource("2_fccik")
 theme_override_font_sizes/font_size = 60
 text = "9024"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=137530569]
+offset_left = 765.0
+offset_top = 9.0
+offset_right = 1147.0
+offset_bottom = 245.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_bjfho")
+text = "WASD - move
+Space - Jump, when bouncing off enemy hold to bounce higher
+Arrow Keys - move camera (Similar to Mario 64)
+
+defeat all enemies to win
+
+credit: 
+Character models, Menu Renders, SFX, Music - @BornCG"

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="3D Platformer Prototype"
-run/main_scene="uid://bbfg2p3cmpf23"
+run/main_scene="uid://c136bd7u3lmxv"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 
