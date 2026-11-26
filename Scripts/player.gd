@@ -44,7 +44,7 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	# Handle jump.
-	handle_jump() 
+	handle_jump()
 
 	# Get the input direction and handle the movement/deceleration.
 	var direction := (camera_controller.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
