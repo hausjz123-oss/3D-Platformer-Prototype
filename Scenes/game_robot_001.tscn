@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://ben7mej1fnlql"]
+
+[ext_resource type="PackedScene" uid="uid://dkdvriujyioe8" path="res://Assets/Models/game-robot-001.glb" id="1_ymr32"]
+
+[node name="game-robot-001" unique_id=1790599646 instance=ExtResource("1_ymr32")]
+
+[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(1816531005) index="0" unique_id=499793816]
+bones/1/position = Vector3(0.2802693, 0.014400481, 0.0076500806)
+bones/1/rotation = Quaternion(0.00952928, 0.03207848, 0.9994399, 0.00030609578)
+bones/2/rotation = Quaternion(-0.054190435, -0.009028028, -0.0074343556, 0.99846214)
+bones/3/position = Vector3(-0.2802693, 0.014400481, 0.0076500806)
+bones/3/rotation = Quaternion(-0.00952928, 0.03207848, 0.9994399, -0.00030609578)
+bones/4/rotation = Quaternion(-0.054190435, 0.009028028, 0.0074343556, 0.99846214)
+bones/6/rotation = Quaternion(-2.247646e-08, -0.7071068, 0.7071068, 5.3385087e-08)
+bones/8/rotation = Quaternion(2.247646e-08, -0.7071068, 0.7071068, -5.3385087e-08)

@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://bci0t3qnkq716"]
+
+[ext_resource type="FontFile" uid="uid://bqv2cv1txr8nu" path="res://Assets/Fonts/Modak/Modak-Regular.ttf" id="1_msdu1"]
+[ext_resource type="Script" uid="uid://dithy2xcks2vt" path="res://Scripts/menu_win.gd" id="1_xewbt"]
+[ext_resource type="Texture2D" uid="uid://dpu62utf2ft6o" path="res://Assets/images/image-screen-win.png" id="2_n5tr2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n5tr2"]
+bg_color = Color(0, 0, 0, 0)
+border_color = Color(0, 0, 0, 0)
+
+[node name="Menu_Win" type="Control" unique_id=1163885509]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xewbt")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=870351221]
+layout_mode = 0
+offset_left = -6.0
+offset_top = -13.0
+offset_right = 1162.0
+offset_bottom = 657.0
+color = Color(0.7647059, 1, 1, 1)
+
+[node name="Label" type="Label" parent="." unique_id=771649428]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 32.0
+offset_right = 958.0
+offset_bottom = 311.0
+theme_override_colors/font_color = Color(2.4065375e-06, 0.86578375, 0.47902244, 1)
+theme_override_colors/font_shadow_color = Color(3.6368798e-05, 0.27121994, 1.1792034e-06, 0.5764706)
+theme_override_colors/font_outline_color = Color(0.70695287, 1, 0.6807885, 1)
+theme_override_constants/shadow_offset_x = 7
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/outline_size = 17
+theme_override_constants/shadow_outline_size = 11
+theme_override_fonts/font = ExtResource("1_msdu1")
+theme_override_font_sizes/font_size = 185
+text = "YOU WIN!"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1397868338]
+layout_mode = 0
+offset_left = 24.0
+offset_top = -68.0
+offset_right = 1113.7778
+offset_bottom = 545.0
+texture = ExtResource("2_n5tr2")
+expand_mode = 1
+
+[node name="Button_MainMenu" type="Button" parent="." unique_id=1435199224]
+layout_mode = 0
+offset_left = 383.0
+offset_top = 515.0
+offset_right = 748.0
+offset_bottom = 631.0
+theme_override_colors/font_color = Color(0.9684151, 0.6105247, 0.93550736, 1)
+theme_override_colors/font_focus_color = Color(0, 0.827451, 0.83137256, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0.827451, 0.83137256, 1)
+theme_override_fonts/font = ExtResource("1_msdu1")
+theme_override_font_sizes/font_size = 71
+theme_override_styles/focus = SubResource("StyleBoxFlat_n5tr2")
+text = "MAIN MENU"
+
+[connection signal="pressed" from="Button_MainMenu" to="." method="_on_button_main_menu_pressed"]

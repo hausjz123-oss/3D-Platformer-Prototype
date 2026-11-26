@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://btm3u4fa3gb62"]
+
+[ext_resource type="Texture2D" uid="uid://c3ljofhv2nhfo" path="res://Assets/Textures/Prototype Textures/PNG/Red/texture_01.png" id="1_6sxyc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w0vp6"]
+albedo_texture = ExtResource("1_6sxyc")
+uv1_triplanar = true
+uv2_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_hlod6"]
+lightmap_size_hint = Vector2i(30, 57)
+material = SubResource("StandardMaterial3D_w0vp6")
+size = Vector3(6.069641, 3.8670654, 10.227783)
+
+[node name="MeshInstance3D" type="MeshInstance3D" unique_id=130893312]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4335327, -1.986206)
+mesh = SubResource("BoxMesh_hlod6")

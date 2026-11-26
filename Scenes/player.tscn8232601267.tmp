@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://cfwpwal7i7smp"]
+
+[ext_resource type="Script" uid="uid://dl2lpbx4vdfv0" path="res://Scripts/player.gd" id="1_v0iea"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_384fj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xdow6"]
+albedo_color = Color(1, 0.64705884, 0.9372549, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_384fj"]
+material = SubResource("StandardMaterial3D_xdow6")
+
+[sub_resource type="PrismMesh" id="PrismMesh_384fj"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_hlod6"]
+size = Vector3(0.18164063, 0.49780273, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ugdbb"]
+size = Vector3(0.1953125, 0.12133789, 0.38867188)
+
+[node name="Player" type="CharacterBody3D" unique_id=254295530]
+script = ExtResource("1_v0iea")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=526753190]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_384fj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D" unique_id=1137545442]
+mesh = SubResource("BoxMesh_384fj")
+
+[node name="Camera_Controller" type="Node3D" parent="." unique_id=1069850828]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+top_level = true
+
+[node name="Camera_Target" type="Node3D" parent="Camera_Controller" unique_id=496938329]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0738246, 3.9318995)
+
+[node name="Camera3D" type="Camera3D" parent="Camera_Controller/Camera_Target" unique_id=879277212]
+transform = Transform3D(1, 0, 0, 0, 0.9221953, 0.38672456, 0, -0.38672456, 0.92219526, 0, 0, 0)
+current = true
+
+[node name="Temporary_nose" type="MeshInstance3D" parent="." unique_id=1628494958]
+transform = Transform3D(0.28495944, 0, 0, 0, -1.6984906e-08, 0.28495944, 0, -0.28495944, -1.6984906e-08, 0, 0.71817106, -0.62096834)
+mesh = SubResource("PrismMesh_384fj")
+
+[node name="Temporary_arm_right" type="MeshInstance3D" parent="." unique_id=134109161]
+transform = Transform3D(0.52084666, -0.8536503, 0, 0.8536503, 0.52084666, 0, 0, 0, 1, 0.605, 0.5, 0)
+mesh = SubResource("BoxMesh_hlod6")
+
+[node name="Temporary_arm_left" type="MeshInstance3D" parent="." unique_id=141108694]
+transform = Transform3D(0.5210097, 0.8535508, 0, -0.8535508, 0.5210097, 0, 0, 0, 1, -0.605, 0.5, 0)
+mesh = SubResource("BoxMesh_hlod6")
+
+[node name="Temporary_Tail" type="MeshInstance3D" parent="." unique_id=859648387]
+transform = Transform3D(1, 0, 0, 0, 0.80716884, 0.5903207, 0, -0.5903207, 0.80716884, 0, 0.35534066, 0.66508913)
+mesh = SubResource("BoxMesh_ugdbb")

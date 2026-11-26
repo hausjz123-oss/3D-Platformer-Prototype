@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dsyx6apwlu6bf"]
+
+[ext_resource type="Script" uid="uid://bj7iouxr1fq2q" path="res://Scripts/sound_manager.gd" id="1_25ke0"]
+[ext_resource type="AudioStream" uid="uid://bommofsww520c" path="res://Assets/SoundEffects/button-maximize_007.ogg" id="1_32i44"]
+[ext_resource type="AudioStream" uid="uid://crgcc1xjypm6i" path="res://Assets/Music/Menu-RetroMystic.ogg" id="3_1ohty"]
+[ext_resource type="AudioStream" uid="uid://by0bmnmnexber" path="res://Assets/Music/Level-RetroBeat.ogg" id="4_tox07"]
+
+[node name="SoundManager" type="Control" unique_id=2019151029]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_25ke0")
+
+[node name="Sound_ButtonPress" type="AudioStreamPlayer" parent="." unique_id=1309844168]
+stream = ExtResource("1_32i44")
+
+[node name="Music_TitleScreen" type="AudioStreamPlayer" parent="." unique_id=171883068]
+stream = ExtResource("3_1ohty")
+
+[node name="Music_MainLevel" type="AudioStreamPlayer" parent="." unique_id=1204511551]
+stream = ExtResource("4_tox07")

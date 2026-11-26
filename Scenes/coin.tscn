@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://dhg6dsd7sjc1e"]
+
+[ext_resource type="Script" uid="uid://dgjmft8iwpqrp" path="res://Scripts/coin.gd" id="1_2qo34"]
+[ext_resource type="ArrayMesh" uid="uid://dinnt0j4babj7" path="res://Assets/Models/Coin_New.tres" id="2_jgi06"]
+[ext_resource type="AudioStream" uid="uid://srcr3s44dk3l" path="res://Assets/SoundEffects/coin-coin3.ogg" id="3_g537i"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_384fj"]
+
+[sub_resource type="Animation" id="Animation_jgi06"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_g537i"]
+resource_name = "idle_bounce"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.20000002, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.5701708, 0), Vector3(0, 0.8478514, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h2p6v"]
+_data = {
+&"RESET": SubResource("Animation_jgi06"),
+&"idle_bounce": SubResource("Animation_g537i")
+}
+
+[node name="Coin" type="Area3D" unique_id=530875370]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_2qo34")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1513878157]
+transform = Transform3D(-0.39521113, -3.4550453e-08, 1.5102483e-15, 0, -1.7275227e-08, -0.39521113, 3.4550453e-08, -0.39521113, 1.7275227e-08, 0, 0, 0)
+mesh = ExtResource("2_jgi06")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1543304094]
+shape = SubResource("SphereShape3D_384fj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1360075513]
+libraries/ = SubResource("AnimationLibrary_h2p6v")
+
+[node name="Sound_CoinCollect" type="AudioStreamPlayer3D" parent="." unique_id=2047162190]
+stream = ExtResource("3_g537i")
+volume_db = -15.0
+pitch_scale = 2.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

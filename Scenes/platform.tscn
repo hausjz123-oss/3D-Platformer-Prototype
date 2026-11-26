@@ -1,13 +1,20 @@
 [gd_scene format=3 uid="uid://brv3y4vlibbpa"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_hlod6"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jgi06"]
+metallic_specular = 1.0
+normal_enabled = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_384fj"]
+material = SubResource("StandardMaterial3D_jgi06")
+size = Vector3(10, 0.5, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hlod6"]
+size = Vector3(10, 0.5, 10)
 
 [node name="Platform" type="StaticBody3D" unique_id=715973868]
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1990153417]
+mesh = SubResource("BoxMesh_384fj")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=235311951]
 shape = SubResource("BoxShape3D_hlod6")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D" unique_id=1990153417]
-mesh = SubResource("BoxMesh_384fj")
